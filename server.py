@@ -1,4 +1,3 @@
-import os
 from mcp.server.fastmcp import FastMCP
 
 mcp = FastMCP("BNT Gambia Evidence")
@@ -10,7 +9,4 @@ def search_evidence(query: str) -> str:
     return f"Evidence search requested for: {query}"
 
 
-if __name__ == "__main__":
-    mcp.run(
-        transport="streamable-http"
-    )
+app = mcp.streamable_http_app()
